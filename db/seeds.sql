@@ -32,4 +32,4 @@ VALUES
   ('Accountant', 50000, 2),
   ('Chief Counsel', 180000, 4),
   ('Lawyer', 125000, 4),
-  ('Sales Person', 100000, 1),
+  ('Sales Person', 100000, 1);
