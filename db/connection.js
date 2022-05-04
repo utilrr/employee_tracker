@@ -13,4 +13,4 @@ const connect = mysql.createConnection(
 
 const connection = connect.promise();
 
-module.exports = db;
+module.exports = connection;
