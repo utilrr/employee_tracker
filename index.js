@@ -24,7 +24,7 @@ const init = async () => {
         "View all employees",
         "Add a department",
         "Add a role",
-        "Add an employees",
+        "Add an employee",
         "Update employee role",
         "Delete a department",
         "Delete a role",
