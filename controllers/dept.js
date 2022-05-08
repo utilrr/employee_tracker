@@ -25,11 +25,15 @@ const addDept = async () => {
 
 //deleting a department from the database
 const deleteDept = async () => {
+  const [deptRows] = await viewDepts();
+  const choices = deptRows.map((dept) => ({ name: dept.name, value: dept.id }));
+
   const answer = await inquirer
     .prompt([
       {
-        type: "input",
+        type: "list",
         name: "deleteDeptId",
+        choices,
         message: "What is the ID of the department that you want to delete?",
       },
     ])
@@ -41,7 +45,7 @@ const deleteDept = async () => {
 
 //exporting the department data
 module.exports = {
-  viewDepts: viewDepts,
-  addDept: addDept,
-  deleteDept: deleteDept,
+  viewDepts,
+  addDept,
+  deleteDept,
 };

@@ -11,9 +11,24 @@ const {
   deleteEmployee,
 } = require("./controllers/emp");
 
+const viewAllDepts = async () => {
+  const [deptRows] = await viewDepts();
+  console.table(deptRows);
+};
+
+const viewAllRoles = async () => {
+  const [roleRows] = await viewRoles();
+  console.table(roleRows);
+};
+
+const viewAllEmployees = async () => {
+  const [empRows] = await viewEmployees();
+  console.table(empRows);
+};
+
 // TODO: Create an array of questions for user input
-const init = async () => {
-  const { choice } = await inquirer.prompt([
+const startQuestions = async () => {
+  const { options } = await inquirer.prompt([
     {
       type: "list",
       name: "options",
@@ -35,71 +50,67 @@ const init = async () => {
   ]);
 
   // switch for each selected choice
-  switch (choice) {
-    case "view all departments":
-      let [deptRows] = await viewDepts();
-      console.table(deptRows);
-      init();
+  switch (options) {
+    case "View all departments":
+      await viewAllDepts();
+      startQuestions();
       break;
 
-    case "view all roles":
-      let [roleRows] = await viewRoles();
-      console.table(roleRows);
-      init();
+    case "View all roles":
+      await viewAllRoles();
+      startQuestions();
       break;
 
-    case "view all employees":
-      let [empRows] = await viewEmployees();
-      console.table(empRows);
-      init();
+    case "View all employees":
+      await viewAllEmployees();
+      startQuestions();
       break;
 
-    case "add a department":
+    case "Add a department":
       await addDept();
-      console.log("Department added successfully.");
-      init();
+      await viewAllDepts();
+      startQuestions();
       break;
 
-    case "add a role":
+    case "Add a role":
       await addRole();
-      console.log("Role added successfully.");
-      init();
+      await viewAllRoles();
+      startQuestions();
       break;
 
-    case "add an employee":
+    case "Add an employee":
       await addEmployee();
-      console.log("Employee added successfully.");
-      init();
+      await viewAllEmployees();
+      startQuestions();
       break;
 
-    case "update employee role":
+    case "Update employee role":
       await updateEmployeeRole();
-      console.log("The employees role has been updated.");
-      init();
+      await viewAllRoles();
+      startQuestions();
       break;
 
-    case "delete a department":
+    case "Delete a department":
       await deleteDept();
-      console.log("The department has been deleted.");
-      init();
+      await viewAllDepts();
+      startQuestions();
       break;
 
-    case "delete a role":
+    case "Delete a role":
       await deleteRole();
-      console.log("The role has been deleted.");
-      init();
+      await viewAllRoles();
+      startQuestions();
       break;
 
-    case "delete an employee":
+    case "Delete an employee":
       await deleteEmployee();
-      console.log("The employee has been deleted.");
-      init();
+      await viewAllEmployees();
+      startQuestions();
       break;
 
-    case "done":
-      console.log("Done");
-      break;
+    default:
+      db.end();
   }
 };
 
-init();
+startQuestions();

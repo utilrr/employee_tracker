@@ -86,12 +86,12 @@ const updateEmployeeRole = async () => {
     {
       type: "input",
       name: "employee_id",
-      message: "Provide employee id to update.",
+      message: "Provide employee id number to update.",
     },
     {
       type: "input",
       name: "updateRoleId",
-      message: "Provide a new role id for the employee.",
+      message: "Provide a new role id number for the employee.",
     },
   ]);
   let employee_id = answer.employee_id;
@@ -106,7 +106,8 @@ const deleteEmployee = async () => {
       {
         type: "input",
         name: "deleteEmployeeId",
-        message: "What is the ID of the employee that you want to delete?",
+        message:
+          "What is the ID number of the employee that you want to delete?",
       },
     ])
     .then((answer) => {

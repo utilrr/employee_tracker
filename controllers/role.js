@@ -41,12 +41,12 @@ const addRole = async () => {
     {
       type: "input",
       name: "roleDept",
-      message: "What department id does the role belong to?",
+      message: "What department id number does the role belong to?",
       validate: (userInput) => {
         if (userInput) {
           return true;
         } else {
-          console.log("You must enter a department id for this role.");
+          console.log("You must enter a department id number for this role.");
           return false;
         }
       },
@@ -55,7 +55,7 @@ const addRole = async () => {
   roleTitle = answer.roleName;
   roleSalary = answer.roleSalary;
   roleDept = answer.roleDept;
-  const sqlQuery = `INSERT INTO role (title, salary, dept_id) VALUES ("${roleTitle}","${roleSalary}","${roleDept}")`;
+  const sqlQuery = `INSERT INTO role (title, salary, department_id) VALUES ("${roleTitle}","${roleSalary}","${roleDept}")`;
   return db.query(sqlQuery);
 };
 
