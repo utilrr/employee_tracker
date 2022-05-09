@@ -27,18 +27,27 @@ https://github.com/utilrr/employee_tracker
 ## Screenshots w/ Captions
 
 Viewing the departments, roles and employees
+
 ![Screen Shot 2022-05-08 at 11 24 32 PM](https://user-images.githubusercontent.com/25494815/167335649-dff36ad5-e7fb-4c95-8408-93ac6c051b51.png)
 
+
 Adding a department
+
 ![Screen Shot 2022-05-08 at 11 24 50 PM](https://user-images.githubusercontent.com/25494815/167335645-745ff601-98e6-4c68-8e6c-d9bdc563e254.png)
 
+
 Adding a role
+
 ![Screen Shot 2022-05-08 at 11 24 57 PM](https://user-images.githubusercontent.com/25494815/167335639-a51e1ac3-d958-4f0f-a2bb-c4c17cd96950.png)
 
-Adding an employee and deleting a departmant
+
+Adding an employee and deleting a department
+
 ![Screen Shot 2022-05-08 at 11 25 19 PM](https://user-images.githubusercontent.com/25494815/167335629-c69cc294-71ad-4df8-9928-d99f1e548dd7.png)
 
+
 Deleting a role and an employee
+
 ![Screen Shot 2022-05-08 at 11 25 33 PM](https://user-images.githubusercontent.com/25494815/167335622-43ec2205-21dd-499e-a7ff-aa59057aa6a8.png)
 ### Contribution
 Made with ❤️ by [Mark Healy]
